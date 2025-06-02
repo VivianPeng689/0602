@@ -22,7 +22,11 @@ let restartButton; // 全域變數追蹤重新挑戰按鈕
 
 function preload() {
   // 載入背景音樂
-  bgMusic = loadSound('relaxing-music-for-study--work.mp3');
+  bgMusic = loadSound('relaxing-music-for-study--work.mp3', () => {
+    console.log('音樂載入成功');
+  }, (err) => {
+    console.error('音樂載入失敗', err);
+  });
 }
 
 // 貓罐頭簡易畫法
@@ -121,12 +125,20 @@ class FallingLetter {
   }
 }
 
-
 function setup() {
   createCanvas(640, 480);
 
-  // 播放背景音樂，並設定為循環播放
-  bgMusic.loop();
+  // 按鈕事件
+  const btn = document.getElementById("startButton");
+  btn.onclick = () => {
+    gameStarted = true;
+    btn.style.display = "none";
+
+    // 播放背景音樂
+    if (!bgMusic.isPlaying()) {
+      bgMusic.loop();
+    }
+  };
 
   // 攝影機設定
   video = createCapture(VIDEO);
@@ -144,13 +156,6 @@ function setup() {
   // 貓罐頭初始位置（畫面中下方）
   catCanX = width / 2;
   catCanY = height - 80;
-
-  // 按鈕事件
-  const btn = document.getElementById("startButton");
-  btn.onclick = () => {
-    gameStarted = true;
-    btn.style.display = "none";
-  };
 }
 
 function draw() {
