@@ -124,11 +124,7 @@ class FallingLetter {
 
 function setup() {
   createCanvas(640, 480);
-  
-  function preload() {
-    // 載入背景音樂
-    bgMusic = loadSound('relaxing-music-for-study--work.mp3');
-  }
+
   // 播放背景音樂，並設定為循環播放
   bgMusic.loop();
 
