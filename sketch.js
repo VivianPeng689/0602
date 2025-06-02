@@ -121,9 +121,14 @@ class FallingLetter {
   }
 }
 
+
 function setup() {
   createCanvas(640, 480);
-
+  
+  function preload() {
+    // 載入背景音樂
+    bgMusic = loadSound('relaxing-music-for-study--work.mp3');
+  }
   // 播放背景音樂，並設定為循環播放
   bgMusic.loop();
 
@@ -225,12 +230,6 @@ function drawStartScreen() {
   textStyle(BOLD);
   text("教育科技學系\n🐾 貓咪接字遊戲 🐾", width / 2, height / 2);
   pop();
-
-  // // 可愛小貓頭簡單畫法
-  // fill('#ff9a9e');
-  // noStroke();
-  // ellipse(width / 2 - 80, height / 3 + 50, 70, 70);
-  // ellipse(width / 2 + 80, height / 3 + 50, 70, 70);
 
   // 貓耳
   fill('#ff6f91');
