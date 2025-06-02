@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <title>教育科技學系 AR 貓咪接字遊戲</title>
+  <script src="libraries/p5.min.js"></script>
+  <script src="libraries/p5.sound.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ml5@0.12.2/dist/ml5.min.js"></script>
+  <style>
+    body {
+      margin: 0; 
+      overflow: hidden;
+      font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+      background: #fff4eb;
+      user-select: none;
+    }
+    #startButton {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  background: #ffb6b9;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #e66767;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+    #startButton:hover {
+      background-color: #ff90a0;
+    }
+  </style>
+</head>
+<body>
+  <button id="startButton">開始遊戲 🐱</button>
+  <script src="sketch.js"></script>
+</body>
+</html>
+
